@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b0c0f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    min-width: 100vh;
+    backdrop-filter: blur(1px);
+    pointer-events: none;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-wrapper {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 40px;
+    height: 100px;
+    align-items: center;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.menu {
+    display: flex;
+    padding-inline-start: 10px;
+    list-style-type: none;
+}
+
+.menu span {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 4.5px 0;
+}
+
+.menu li {
+    position: relative;
+    list-style: none;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 12px 18px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.menu li::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 0%;
+    height: 3px;
+    left: 50%;
+    background: #275552;
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.container nav li:hover {
+    color: #275552;
+}
+
+.container nav li:hover::after {
+    width: 80%;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* === NAVIGATION === */
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.btn-agendar {
+    background-color: #17615a;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: auto;
+}
+
+.btn-agendar:hover {
+    background-color: #218e82;
+}
+
+/* === HERO === */
+
+.hero {
+    background: linear-gradient(to right, #0b0c0f 30%, #131515 100%);
+    padding-top: 120px;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+
+.hero h1 {
+    width: 35%;
+    font-size: 7rem;
+    font-weight: 600;
+    margin: 10px;
+    line-height: 1;
+    letter-spacing: 2rem;
+}
+
+.hero h1 span {
+    color: #ccc;
+    font-weight: 300;
+    letter-spacing: 1.1rem;
+    font-size: 5rem;
+}
+
+.hero p {
+    font-size: 1.7rem;
+    color: #aaa;
+    max-width: 600px;
+    margin: auto auto;
+    margin-right: 10rem;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+}
+
+.hero-graphic {
+    display: flex;
+    align-items: flex-end; /* 🔽 Alinea los hijos en la parte inferior */
+    justify-content: center; /* Opcional: centra horizontalmente */
+    height: 60vh; /* Altura del contenedor principal */
+    gap: 10px; /* Espacio entre las barras */
+    padding: 40px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.line-container {
+  width: 2vw;
+  max-width: 20px;
+  min-width: 6px;
+  height: var(--h);
+  position: relative;
+  animation: fillAnimation 1s ease forwards;
+  animation-delay: var(--delay);
+  border-radius: 4px;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.line-base {
+    width: 35%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    align-items: center;
+    bottom: 0;
+    margin-left: 30%;
+}
+
+.line-fill {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    height: 0%;
+    animation: wave 4s ease-in-out infinite;
+}
+
+/* Animación: crecer y volver a disminuir */
+@keyframes wave {
+    0%, 100% {
+        height: 30%;
+        width: 20px;
+    }
+    50% {
+        height: 100%;
+        width: 20px;
+    }
+}
+
+@keyframes fillAnimation {
+  to {
+    transform: scaleY(0.75);
+  }
+}
+
+@media (max-width: 768px) {
+  .line-container {
+    width: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .line-container {
+    width: 4vw;
+  }
+}
+
+/* 🔁 RESPONSIVE */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    pointer-events: all;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+        height: auto;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 0;
+        margin-top: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+    }
+
+    .menu li {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1.2em;
+        border-top: 1px solid #27555222;
+    }
+
+    .menu span {
+        display: none;
+    }
+
+    .btn-agendar {
+        width: auto; /* ✅ no se expande al 100% */
+        margin: 10px auto 0 auto; /* ✅ centrado horizontalmente */
+        display: block;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    /* Show menu when active */
+    .menu.active {
+        display: flex;
+    }
+}
+/* === VSL === */
+
+.vsl {
+    padding: 100px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, #132223, #0b0c0f);
+    height: 100vh;
+}
+
+.vsl blockquote {
+    font-size: 1.1rem;
+    color: #ccc;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.vsl h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.vsl p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* === SERVICIOS === */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 80px 60px;
+    background-color: #0f1114;
+    height: 100vh;
+}
+
+.beneficio {
+    background-color: #11161a;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #1f2a30;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+}
+
+.beneficio h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00ffd5;
+}
+
+.beneficio span {
+    font-weight: bold;
+    color: #fff;
+}
+
+.beneficio p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* === CTA FINAL === */
+.cta-final {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #122222;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
