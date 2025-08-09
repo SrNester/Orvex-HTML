@@ -263,10 +263,12 @@ a{
 }
 
 @media (max-width: 768px) {
+    /* === Container === */
     .container {
         padding: 0 16px;
     }
 
+    /* === Hero === */
     .hero {
         display: flex;
         flex-direction: column;
@@ -339,18 +341,6 @@ a{
     /* Show menu when active */
     .menu.active {
         display: flex;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 12px;
-    }
-
-
-
-    .hero {
-        padding: 0 12px;
     }
 }
 
